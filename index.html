@@ -1,7 +1,7 @@
 <!-- ====================================================================
  NASSCORP COGNITIVE TOOL DECK: GLOBAL ENTERPRISE ONLINE HUB MATRIX
  Designed by Morris B.S. Dossen — System Designer
- BUILD VER: V14.0.0 (400K+ CHUNK STREAM 10-PART RAW TEXT PIPELINES)
+ BUILD VER: V16.0.0 (3M+ COMPACT CHUNK 30-PART RAW TEXT PIPELINES)
  PATH LOCATION: C:\GOL_ONLINE\index.html
  SEGMENT 1 OF 6: CORE LAYOUT HEADERS & GLOBAL INTERFACE STYLESHEET
  ==================================================================== -->
@@ -10,17 +10,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GOL CENTRAL REGISTRY - ONLINE PORTAL</title>
+    <title>CRECORDS/GOL-REGISTRY:PAYROLL</title>
     <style>
         body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f0f4f8; margin: 0; padding: 0; color: #333; text-transform: uppercase; }
-        .top-banner { background-color: #002060; border-bottom: 5px solid #FFC000; padding: 30px 45px; color: white; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
-        .top-banner h1 { margin: 0; font-size: 28px; font-weight: 800; letter-spacing: 1px; }
-        .top-banner p { margin: 6px 0 0 0; color: #FFC000; font-size: 14px; font-weight: 700; letter-spacing: 1px; }
         
-        /* 🔐 DUO-ROLE LIVE SELECTOR CONTROL SWITCH RIBBON STYLES */
+        /* 🔒 PITCH-BLACK SECURE INGRESS GATEWAY AUTHENTICATION SHIELD LAYOUTS */
+        #secureIngressGatewayShield { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: #0b0f19; z-index: 999999; display: flex; align-items: center; justify-content: center; }
+        .auth-card-fortress { background: #FFFFFF; padding: 45px; border-radius: 16px; width: 440px; box-shadow: 0 15px 35px rgba(0,0,0,0.5); border-top: 6px solid #002060; text-align: center; }
+        .auth-card-fortress h2 { color: #002060; font-size: 20px; font-weight: 900; margin-top: 0; margin-bottom: 8px; letter-spacing: 0.5px; }
+        .auth-card-fortress p { color: #FFC000; font-size: 11px; font-weight: 800; background: #002060; padding: 6px; border-radius: 4px; margin-bottom: 25px; letter-spacing: 0.5px; }
+        
+        .top-banner { background-color: #002060; border-bottom: 5px solid #FFC000; padding: 30px 45px; color: white; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
+        .top-banner h1 { margin: 0; font-size: 26px; font-weight: 900; letter-spacing: 1.5px; color: #FFFFFF; }
+        .top-banner p { margin: 6px 0 0 0; color: #FFC000; font-size: 13px; font-weight: 700; letter-spacing: 1px; }
+        
+        /* 🔐 MULTI-USER CLEARANCE IDENTIFIER CARD BADGE */
         .role-shunter-badge { background-color: #00bfff; padding: 8px 18px; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 10px; }
         .role-shunter-badge label { font-size: 11px; font-weight: 900; color: #002060; letter-spacing: 0.5px; }
-        .role-shunter-badge select { background: #002060; color: white; border: 2px solid white; border-radius: 4px; padding: 4px 8px; font-weight: 900; font-size: 11px; font-family: inherit; cursor: pointer; text-transform: uppercase; }
+        .role-profile-tag { background: #002060; color: #FFFFFF; border: 2px solid white; border-radius: 4px; padding: 4px 12px; font-weight: 900; font-size: 11px; letter-spacing: 1px; }
         
         .container { max-width: 2500px; margin: 30px auto; padding: 0 35px; box-sizing: border-box; }
         
@@ -41,7 +48,7 @@
         .form-group label { font-size: 11px; font-weight: 800; color: #002060; margin-bottom: 6px; letter-spacing: 0.5px; }
         .form-group input, .form-group select, .form-group textarea { padding: 10px; border: 2px solid #c8d6e5; border-radius: 6px; font-size: 13px; font-weight: 700; font-family: inherit; color: #333; text-transform: uppercase; box-sizing: border-box; }
         .dual-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
- button { display: block; text-align: center; text-decoration: none; border: none; padding: 12px; font-size: 12.5px; font-weight: 900; border-radius: 6px; cursor: pointer; transition: all 0.2s; width: 100%; box-sizing: border-box; text-transform: uppercase; letter-spacing: 1.5px; text-shadow: 0 1px 2px rgba(0,0,0,0.4); height: 36px; line-height: 12px; }
+button { display: block; text-align: center; text-decoration: none; border: none; padding: 12px; font-size: 12.5px; font-weight: 900; border-radius: 6px; cursor: pointer; transition: all 0.2s; width: 100%; box-sizing: border-box; text-transform: uppercase; letter-spacing: 1.5px; text-shadow: 0 1px 2px rgba(0,0,0,0.4); height: 36px; line-height: 12px; }
         button:hover { filter: brightness(1.15); transform: translateY(-1px); }
         button:active { transform: translateY(1px); }
         
@@ -65,64 +72,105 @@
     </style>
 </head>
 <body>
+
+    <!-- 🔒 CLOUD INGRESS GATEWAY BLOCKADE LAYER (PITCH BLACK BY DEFAULT) -->
+    <div id="secureIngressGatewayShield">
+        <div class="auth-card-fortress">
+            <h2>GOL CENTRAL REGISTRY</h2>
+            <p>CRECORDS/GOL-REGISTRY:PAYROLL</p>
+            <form id="ingressGateForm" onsubmit="handleSecurePortalLogin(event)">
+                <div class="form-group" style="text-align: left;">
+                    <label>PERSONNEL IDENTITY USERNAME</label>
+                    <input type="text" id="gateUserField" required placeholder="ENTER ACCOUNT USERNAME..." style="width: 100%;">
+                </div>
+                <div class="form-group" style="text-align: left; margin-bottom: 25px;">
+                    <label>PORTAL ACCESS LOCK PASSWORD</label>
+                    <input type="password" id="gatePassField" required placeholder="ENTER ACCOUNT ACCESS PASSWORD..." style="width: 100%;">
+                </div>
+                <button type="submit" class="btn-blue" style="height: 40px; line-height: 16px;">AUTHORIZE INGRESS SESSIONS</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MAIN PORTAL DASHBOARD WRAPPER CONTAINER -->
     <div class="top-banner">
         <div>
-            <h1>GOL CENTRAL PAYROLL REGISTRY</h1>
-            <p>GOVERNMENT OF LIBERIA EMPLOYEE DATABASE SYSTEM — ONLINE GLOBAL INFRASTRUCTURE HUB</p>
+            <h1>CRECORDS/GOL-REGISTRY:PAYROLL</h1>
+            <p>GOVERNMENT OF LIBERIA EMPLOYEE DATABASE SYSTEM — NATIONAL RECORDS SCALE CLOUD CONTROL</p>
         </div>
-        <!-- 🔐 SECURITY ACCESS CONTROL PORT WITH LOCAL MONITOR DEFAULTED CHUTE -->
         <div class="role-shunter-badge">
-            <label>PORTAL SECURITY ACCESS:</label>
-            <select id="portalRoleSelector" onchange="shuntSystemSecurityRole()">
-                <option value="LOCAL" selected>LOCAL MONITOR</option>
-                <option value="ADMIN">ADMIN CLEARANCE</option>
-            </select>
+            <label>CLEARANCE TAG:</label>
+            <span class="role-profile-tag" id="currentAccessRoleLabelDisplayBox">LOCAL MONITOR</span>
         </div>
     </div>
 
     <div class="container">
         <div class="metrics-ribbon">
             <div class="counter-card">
-                <span class="counter-label">TOTAL ACCOUNTED STAFF</span>
+                <span class="counter-label">TOTAL RECORD ENTRIES (ROWS)</span>
                 <span class="counter-value" id="totalEntitiesBox">0</span>
             </div>
             <div class="counter-card active-card">
-                <span class="counter-label">TOTAL BUDGETARY PAYROLL EXPENDITURE</span>
-                <span class="counter-value" id="totalExpenditureBox">$0.00</span>
+                <span class="counter-label">UNIQUE STAFF ACCOUNTED FOR (BY NAME)</span>
+                <span class="counter-value" id="uniqueStaffBox">0</span>
             </div>
             <div class="counter-card private-card">
                 <span class="counter-label">ACTIVE GOVERNMENT AGENCIES</span>
                 <span class="counter-value" id="totalAgenciesBox">0</span>
             </div>
             <div class="counter-card" style="border-left-color: #008002;">
-                <span class="counter-label">CLOUD PIPELINE TRACK LINK</span>
-                <span class="counter-value" style="font-size:14px; color:#008002; font-weight:800; margin-top:2px;">GLOBAL PORT V14.0 LIVE</span>
+                <span class="counter-label">CLOUD INFRASTRUCTURE MATRIX LINK</span>
+                <span class="counter-value" style="font-size:14px; color:#008002; font-weight:800; margin-top:2px;">GLOBAL PORT V16.0 SECURE</span>
             </div>
         </div>
-<!-- 🛰️ SYSTEM SIDEBAR BAY CONTROL LAYER (HIDDEN AUTOMATICALLY IN LOCAL MONITOR MODE) -->
+<!-- 🛰️ SYSTEM SIDEBAR BAY CONTROL LAYER (HIDDEN AUTOMATICALLY FOR ORDINARY AUTHORIZED USERS) -->
         <div class="workspace-deck local-mode-active" id="masterDeckLayoutWrapper">
             <div class="panel-box" id="adminSidebarFormBoxContainer" style="display: none;">
                 <h2 id="formPanelTitle">REGISTRY MAINTENANCE</h2>
                 <form id="registryForm" onsubmit="handleSave(event)">
                     <input type="hidden" id="recordId" value="">
-                    <div class="form-group"><label>EMPLOYEE FULL NAME (NAME)</label><input type="text" id="employeeName" required placeholder="ENTER EMPLOYEE FULL NAME..."></div>
-                    <div class="form-group"><label>MONTHLY BASE BUDGETARY SALARY (SALARY)</label><input type="number" step="0.01" id="employeeSalary" required placeholder="E.G. 1250.50..."></div>
-                    <div class="form-group"><label>DEPLOYED GOVERNMENT AGENCY (AGENCY)</label><input type="text" id="employeeAgency" required placeholder="E.G. NASSCORP, MOF, MFDP..."></div>
+                    
+                    <div class="form-group">
+                        <label>EMPLOYEE FULL NAME (NAME)</label>
+                        <input type="text" id="employeeName" required placeholder="ENTER EMPLOYEE FULL NAME...">
+                    </div>
+
+                    <div class="form-group">
+                        <label>DEPLOYED GOVERNMENT AGENCY (AGENCY)</label>
+                        <input type="text" id="employeeAgency" required placeholder="E.G. NASSCORP, MOF, MFDP...">
+                    </div>
+
                     <div class="dual-fields">
                         <div class="form-group">
                             <label>FISCAL AUDIT MONTH</label>
                             <select id="auditMonth" required>
-                                <option value="JANUARY">JANUARY</option><option value="FEBRUARY">FEBRUARY</option><option value="MARCH">MARCH</option><option value="APRIL">APRIL</option><option value="MAY">MAY</option><option value="JUNE">JUNE</option><option value="JULY">JULY</option><option value="AUGUST">AUGUST</option><option value="SEPTEMBER">SEPTEMBER</option><option value="OCTOBER">OCTOBER</option><option value="NOVEMBER">NOVEMBER</option><option value="DECEMBER">DECEMBER</option>
+                                <option value="JANUARY">JANUARY</option>
+                                <option value="FEBRUARY">FEBRUARY</option>
+                                <option value="MARCH">MARCH</option>
+                                <option value="APRIL">APRIL</option>
+                                <option value="MAY">MAY</option>
+                                <option value="JUNE">JUNE</option>
+                                <option value="JULY">JULY</option>
+                                <option value="AUGUST">AUGUST</option>
+                                <option value="SEPTEMBER">SEPTEMBER</option>
+                                <option value="OCTOBER">OCTOBER</option>
+                                <option value="NOVEMBER">NOVEMBER</option>
+                                <option value="DECEMBER">DECEMBER</option>
                             </select>
                         </div>
-                        <div class="form-group"><label>FISCAL AUDIT YEAR</label><input type="text" id="auditYear" required value="2026" placeholder="E.G. 2026..."></div>
+                        <div class="form-group">
+                            <label>FISCAL AUDIT YEAR</label>
+                            <input type="text" id="auditYear" required value="2026" placeholder="E.G. 2026...">
+                        </div>
                     </div>
+                    
                     <button type="submit" class="btn-green" id="submitBtn">SAVE REGISTRY RECORD</button>
                     <button type="button" class="btn-blue" style="margin-top:12px;" onclick="resetForm()">ADD NEW</button>
                 </form>
+                
                 <div style="margin-top: 25px; border-top: 2px dashed #c8d6e5; padding-top: 15px;">
                     <label style="font-size: 11px; font-weight: 800; color: #002060; display: block; margin-bottom: 8px;">EXCEL DIRECT COPY PASTE GATEWAY</label>
-                    <textarea id="bulkPasteArea" rows="4" style="width: 100%; box-sizing: border-box; padding: 10px; font-size: 11px; font-family: monospace; text-transform: uppercase;" placeholder="HIGHLIGHT EXCEL DATA ROWS (COLUMNS A TO E: NAME, SALARY, AGENCY, MONTH, YEAR), COPY AND PASTE HERE..."></textarea>
+                    <textarea id="bulkPasteArea" rows="4" style="width: 100%; box-sizing: border-box; padding: 10px; font-size: 11px; font-family: monospace; text-transform: uppercase;" placeholder="HIGHLIGHT EXCEL DATA ROWS (COLUMNS A TO D: NAME, AGENCY, MONTH, YEAR), COPY AND PASTE HERE..."></textarea>
                     <button class="btn-purple" style="margin-top: 10px;" onclick="handleBulkInject()">PROCESS RECORD SEGMENTS</button>
                 </div>
             </div>
@@ -162,7 +210,7 @@
                                 </select>
                             </div>
                             <div class="form-group" style="margin-bottom:0;">
-                                <label>FILTER BY AUDIT YEAR</label>
+                                <label>FILTER BY AUDIT YEAR (1988 - 2030)</label>
                                 <select id="searchYearDropdown" onchange="handleInstantSearch()">
                                     <option value="">-- ALL YEARS --</option>
                                 </select>
@@ -188,15 +236,14 @@
                             <thead>
                                 <tr>
                                     <th>EMPLOYEE NAME</th>
-                                    <th style="width: 180px;">SALARY</th>
-                                    <th style="width: 220px;">AGENCY</th>
-                                    <th style="width: 160px;">MONTH</th>
-                                    <th style="width: 130px;">YEAR</th>
+                                    <th style="width: 280px;">DEPLOYED AGENCY</th>
+                                    <th style="width: 180px;">AUDIT MONTH</th>
+                                    <th style="width: 140px;">AUDIT YEAR</th>
                                     <th style="text-align:center; width:180px; display: none;" id="datagridActionsHeaderHubCell">ACTIONS HUB</th>
                                 </tr>
                             </thead>
                             <tbody id="directoryTableBody">
-                                <!-- Stream arrays append automatically -->
+                                <!-- Stream arrays append automatically upon authorized verification -->
                             </tbody>
                         </table>
                     </div>
@@ -205,11 +252,11 @@
         </div>
 
         <div class="footer-banner">
-            <div class="footer-version">NASSCORP GOL ONLINE ENTERPRISE BUILD: V14.0.0 (400K STREAM RAW TEXT PIPELINES)</div>
+            <div class="footer-version">NASSCORP GOL ONLINE ENTERPRISE BUILD: V16.0.0 (3M+ COMPACT TEXT CHUTES)</div>
             <div class="footer-coordinator">MORRIS B.S. DOSSEN - COORDINATOR</div>
         </div>
     </div>
- <script>
+<script>
         let memoryVaultCache = [];
         let filteredCacheIndex = [];
         let activeQueryText = "";
@@ -217,32 +264,71 @@
         let filterMonthSelected = "";
         let filterYearSelected = "";
         let currentSystemAccessRole = "LOCAL";
-
-        // 🛰️ HIGH-VELOCITY ENTERPRISE CHUNK LOADING POINTERS
+        
         let currentChunkLoadedIndex = 0;
         const CHUNK_RENDER_SIZE = 150;
 
-        window.addEventListener("DOMContentLoaded", function() {
-            syncLoadFromSharedNetworkDrive();
-        });
+        // 🔒 THE MULTI-USER ACCESS PROFILE DICTIONARY GATEWAY
+        const authorizedPersonnelAccounts = {
+            "MDOSSEN": { passcode: "COORDINATOR2026", role: "ADMIN" },
+            "DIRECTOR1": { passcode: "DIR_PAYROLL26", role: "LOCAL" },
+            "DIRECTOR2": { passcode: "DIR_AUDIT2026", role: "LOCAL" }
+        };
 
-        // 🛰️ 10-VALVE ASYNC PIPELINE STREAM STITCHING VALVE
-        async function syncLoadFromSharedNetworkDrive() {
-            console.log("📡 ENGAGING 10-VALVE PARALLEL ASYNC MEMORY STREAM SHUNT...");
-            let fetchPromises = [];
+        // 🛰️ SYSTEM INGRESS INTERCEPTOR
+        function handleSecurePortalLogin(e) {
+            e.preventDefault();
+            const usernameInput = document.getElementById('gateUserField').value.trim().toUpperCase();
+            const passwordInput = document.getElementById('gatePassField').value;
             
-            // Register 10 concurrent network pipelines to fire simultaneously
-            for (let p = 1; p <= 10; p++) {
+            if (authorizedPersonnelAccounts[usernameInput] && authorizedPersonnelAccounts[usernameInput].passcode === passwordInput) {
+                const userProfile = authorizedPersonnelAccounts[usernameInput];
+                currentSystemAccessRole = userProfile.role;
+                
+                // Unshield the pitch-black layout blockade flat
+                document.getElementById('secureIngressGatewayShield').style.display = 'none';
+                document.getElementById('currentAccessRoleLabelDisplayBox').innerText = currentSystemAccessRole === "ADMIN" ? "ADMIN CLEARANCE" : "LOCAL MONITOR";
+                
+                applySystemInterfaceClearanceLayouts();
+                
+                // Fire the concurrent streaming shunts across the web
+                syncLoadFromSharedNetworkDrive();
+            } else {
+                alert("⛔ ACCESS REJECTED: INVALID PERSONNEL IDENTITY CREDENTIALS VALUE SUPPLIED.");
+            }
+        }
+
+        function applySystemInterfaceClearanceLayouts() {
+            const masterDeck = document.getElementById('masterDeckLayoutWrapper');
+            const adminForm = document.getElementById('adminSidebarFormBoxContainer');
+            const clearBtn = document.getElementById('clearBoardActionBtn');
+            const uploadChute = document.getElementById('fileUploadActionChuteContainer');
+            const actionsHeader = document.getElementById('datagridActionsHeaderHubCell');
+
+            if (currentSystemAccessRole === "LOCAL") {
+                if (adminForm) adminForm.style.display = "none";
+                if (masterDeck) masterDeck.classList.add('local-mode-active');
+                if (clearBtn) clearBtn.style.display = "none";
+                if (uploadChute) uploadChute.style.display = "none";
+                if (actionsHeader) actionsHeader.style.display = "none";
+            } else {
+                if (adminForm) adminForm.style.display = "block";
+                if (masterDeck) masterDeck.classList.remove('local-mode-active');
+                if (clearBtn) clearBtn.style.display = "block";
+                if (uploadChute) uploadChute.style.display = "block";
+                if (actionsHeader) actionsHeader.style.display = "table-cell";
+            }
+        }
+
+        // 🛰️ 30-VALVE ASYNC PIPELINE RAW TEXT RE-ASSEMBLER
+        async function syncLoadFromSharedNetworkDrive() {
+            let fetchPromises = [];
+            // Launching 30 background streams concurrently over the web architecture
+            for (let p = 1; p <= 30; p++) {
                 fetchPromises.push(
                     fetch(`part${p}.txt?t=` + new Date().getTime())
-                        .then(res => {
-                            if (!res.ok) throw new Error(`PART ${p} OFFLINE`);
-                            return res.text();
-                        })
-                        .catch(err => {
-                            console.warn(`📡 VALVE LINK INTERCEPTED DROPPED SEGMENT: ${err.message}`);
-                            return "";
-                        })
+                        .then(res => { if (!res.ok) throw new Error(); return res.text(); })
+                        .catch(() => "")
                 );
             }
 
@@ -250,10 +336,9 @@
                 const partsCollected = await Promise.all(fetchPromises);
                 let fullAggregatedVault = [];
                 
-                partsCollected.forEach((scrambledPayload, idx) => {
+                partsCollected.forEach(scrambledPayload => {
                     if (!scrambledPayload) return;
                     let decryptedChars = [];
-                    // Reverse the progressive positioning matrix transformation cipher
                     for (let i = 0; i < scrambledPayload.length; i++) {
                         let char = scrambledPayload[i];
                         let originalOrd = char.charCodeAt(0) - (i % 7) - 13;
@@ -264,9 +349,8 @@
                 });
                 
                 memoryVaultCache = fullAggregatedVault;
-                console.log(`🔓 SUCCESS: MERGED ${memoryVaultCache.length.toLocaleString()} ROWS INSIDE MEMORY ENGINE.`);
             } catch (err) {
-                console.error("📡 SYNC CRITICAL EXCEPTION: SECURITY ACCESS FAULT DURING STREAM EXTRACTION.", err);
+                console.error("📡 SYNC ERROR DURING STREAM EXTRACTION.", err);
                 memoryVaultCache = [];
             }
             
@@ -274,21 +358,18 @@
             executePreFilterIndexing();
         }
 
-        // 🛰️ DYNAMIC DROPDOWNS INITIALIZER: Compiles both unique agencies and unique audit years from payroll
+        // 🛰️ DYNAMIC DROPDOWNS INITIALIZER: Automated alphabetized listing & 1988-2030 scale locks
         function populateDynamicDropdowns() {
             const agencyDropdown = document.getElementById('searchAgencyDropdown');
             const yearDropdown = document.getElementById('searchYearDropdown');
+            
             if (agencyDropdown) agencyDropdown.innerHTML = '<option value="">-- ALL AGENCIES --</option>';
             if (yearDropdown) yearDropdown.innerHTML = '<option value="">-- ALL YEARS --</option>';
             
             let uniqueAgenciesMap = {};
-            let uniqueYearsMap = {};
-            
             for (let i = 0; i < memoryVaultCache.length; i++) {
                 let ag = memoryVaultCache[i].agency;
-                let yr = memoryVaultCache[i].year;
                 if (ag) uniqueAgenciesMap[ag.toUpperCase()] = true;
-                if (yr) uniqueYearsMap[yr.toString().toUpperCase()] = true;
             }
             
             if (agencyDropdown) {
@@ -298,16 +379,18 @@
                     agencyDropdown.appendChild(opt);
                 });
             }
+            
+            // 🎯 EXTENDED 1988 TO 2030 TIME CAPACITOR DYNAMIC SELECTOR CONTAINER LOOP
             if (yearDropdown) {
-                Object.keys(uniqueYearsMap).sort().forEach(yearLabel => {
+                for (let yearValue = 1988; yearValue <= 2030; yearValue++) {
                     const opt = document.createElement('option');
-                    opt.value = yearLabel; opt.innerText = yearLabel;
+                    opt.value = yearValue.toString();
+                    opt.innerText = yearValue.toString();
                     yearDropdown.appendChild(opt);
-                });
+                }
             }
         }
-
-        function executePreFilterIndexing() {
+function executePreFilterIndexing() {
             filteredCacheIndex = memoryVaultCache.filter(row => {
                 const rowName = (row.employee_name || "").toUpperCase();
                 const rowAgency = (row.agency || "").toUpperCase();
@@ -336,8 +419,8 @@
             if (currentChunkLoadedIndex >= filteredCacheIndex.length && currentChunkLoadedIndex > 0) return;
 
             if (filteredCacheIndex.length === 0) {
-                const colSpanCount = currentSystemAccessRole === "ADMIN" ? 6 : 5;
-                tbody.innerHTML = '<tr><td colspan="' + colSpanCount + '" style="text-align: center; padding: 30px; color:#ff3b30; font-weight:800; font-size:12px;">NO RECORD ENTRIES MATCH THE SPECIFIED PARAMETER LOOKUP DROPDOWN CRITERIA.</td></tr>';
+                const colSpanCount = currentSystemAccessRole === "ADMIN" ? 5 : 4;
+                tbody.innerHTML = '<tr><td colspan="' + colSpanCount + '" style="text-align: center; padding: 30px; color:#ff3b30; font-weight:800; font-size:12px;">NO RECORD ENTRIES MATCH THE SPECIFIED DROPDOWN CRITERIA.</td></tr>';
                 return;
             }
 
@@ -352,11 +435,7 @@
                     tr.style.cursor = "default";
                 }
                 
-                let salaryVal = parseFloat(row.salary);
-                let displaySalary = !isNaN(salaryVal) ? "\$" + salaryVal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : "\$0.00";
-                
                 tr.innerHTML = "<td>" + (row.employee_name || 'N/A') + "</td>" +
-                               "<td><span style='font-weight:600; color:#002060;'>" + displaySalary + "</span></td>" +
                                "<td>" + (row.agency || 'N/A') + "</td>" +
                                "<td>" + (row.month || 'JANUARY') + "</td>" +
                                "<td>" + (row.year || '2026') + "</td>" +
@@ -373,17 +452,20 @@
                 appendNextChunkToGridBody();
             }
         }
-function calculateMetrics() {
+// 🛰️ DYNAMIC CITIZEN CENSUS VALVE: Deduplicates 3,000,000+ histories inside memory channels
+        function calculateMetrics() {
             document.getElementById('totalEntitiesBox').innerText = memoryVaultCache.length.toLocaleString();
-            let totalSalaryBurn = 0; 
+            
+            let uniqueStaffMap = new Set();
             let uniqueAgenciesMap = {};
+            
             for (let i = 0; i < memoryVaultCache.length; i++) {
                 let row = memoryVaultCache[i];
-                let salNum = parseFloat(row.salary);
-                if (!isNaN(salNum)) totalSalaryBurn += salNum;
+                if (row.employee_name) uniqueStaffMap.add(row.employee_name.trim().toUpperCase());
                 if (row.agency) uniqueAgenciesMap[row.agency.toUpperCase()] = true;
             }
-            document.getElementById('totalExpenditureBox').innerText = "$" + totalSalaryBurn.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            
+            document.getElementById('uniqueStaffBox').innerText = uniqueStaffMap.size.toLocaleString();
             document.getElementById('totalAgenciesBox').innerText = Object.keys(uniqueAgenciesMap).length.toLocaleString();
         }
 
@@ -401,38 +483,26 @@ function calculateMetrics() {
             executePreFilterIndexing(); 
         }
 
-        function shuntSystemSecurityRole() {
-            const roleSelector = document.getElementById('portalRoleSelector');
-            if (!roleSelector) return;
-            currentSystemAccessRole = roleSelector.value;
-            if (currentSystemAccessRole === "ADMIN") {
-                const passToken = prompt("🔒 CENTRAL PORTAL SECURITY KEY CHALLENGE:");
-                if (passToken !== "easter") { alert("⛔ REJECTED."); roleSelector.value = "LOCAL"; currentSystemAccessRole = "LOCAL"; return; }
-            }
-            const masterDeck = document.getElementById('masterDeckLayoutWrapper');
-            const adminForm = document.getElementById('adminSidebarFormBoxContainer');
-            const clearBtn = document.getElementById('clearBoardActionBtn');
-            const uploadChute = document.getElementById('fileUploadActionChuteContainer');
-            const actionsHeader = document.getElementById('datagridActionsHeaderHubCell');
-            if (currentSystemAccessRole === "LOCAL") {
-                if (adminForm) adminForm.style.display = "none"; if (masterDeck) masterDeck.classList.add('local-mode-active');
-                if (clearBtn) clearBtn.style.display = "none"; if (uploadChute) uploadChute.style.display = "none"; if (actionsHeader) actionsHeader.style.display = "none";
-            } else {
-                if (adminForm) adminForm.style.display = "block"; if (masterDeck) masterDeck.classList.remove('local-mode-active');
-                if (clearBtn) clearBtn.style.display = "block"; if (uploadChute) uploadChute.style.display = "block"; if (actionsHeader) actionsHeader.style.display = "table-cell";
-            }
-            executePreFilterIndexing();
+        function loadRowIntoForm(id) {
+            if (currentSystemAccessRole !== "ADMIN") return;
+            const item = memoryVaultCache.find(row => row.id === id);
+            if (!item) return;
+            document.getElementById('recordId').value = item.id;
+            document.getElementById('employeeName').value = item.employee_name;
+            document.getElementById('employeeAgency').value = item.agency;
+            document.getElementById('auditMonth').value = item.month;
+            document.getElementById('auditYear').value = item.year;
+            document.getElementById('formPanelTitle').innerText = "EDIT REGISTRY RECORD";
         }
 
         function triggerFileInputChuteClick() { document.getElementById('csvFileInputChute').click(); }
         
         function handleSave(e) {
-            e.preventDefault(); if (currentSystemAccessRole === "LOCAL") return;
+            e.preventDefault(); if (currentSystemAccessRole !== "ADMIN") return;
             const id = document.getElementById('recordId').value;
             const payload = {
                 id: id ? id : crypto.randomUUID().substring(0, 8),
                 employee_name: document.getElementById('employeeName').value.trim().toUpperCase(),
-                salary: parseFloat(document.getElementById('employeeSalary').value),
                 agency: document.getElementById('employeeAgency').value.trim().toUpperCase(),
                 month: document.getElementById('auditMonth').value.toUpperCase(),
                 year: document.getElementById('auditYear').value.trim().toUpperCase()
@@ -443,13 +513,13 @@ function calculateMetrics() {
         }
 
         function handleFileDropUpload(e) {
-            if (currentSystemAccessRole === "LOCAL") return;
+            if (currentSystemAccessRole !== "ADMIN") return;
             const files = e.target.files; if (!files || files.length === 0) return;
             const reader = new FileReader(); reader.onload = function(evt) { processRawTextPayloadBlock(evt.target.result); e.target.value = ''; }; reader.readAsText(files);
         }
 
         function handleBulkInject() {
-            if (currentSystemAccessRole === "LOCAL") return;
+            if (currentSystemAccessRole !== "ADMIN") return;
             const pasteData = document.getElementById('bulkPasteArea').value; if (!pasteData.trim()) return;
             processRawTextPayloadBlock(pasteData); document.getElementById('bulkPasteArea').value = '';
         }
@@ -461,26 +531,23 @@ function calculateMetrics() {
                 let delimiter = cleanLine.includes(";") ? ";" : (cleanLine.includes("\t") ? "\t" : ",");
                 let cells = cleanLine.split(delimiter).map(c => c.trim().replace(/^"|"$/g, ""));
                 if (cells.length >= 3) {
-                    const [pos_0, pos_1, pos_2, pos_3, pos_4] = cells;
+                    const [pos_0, pos_1, pos_2, pos_3] = cells;
                     if (pos_0.toUpperCase().includes("NAME") || pos_0.toUpperCase().includes("EMPLOYEE")) return;
-                    let cleanSalaryStr = pos_1.replace(/[^0-9.]/g, ""); let empSalary = cleanSalaryStr ? parseFloat(cleanSalaryStr) : 0.0;
-                    let empMonth = pos_3 ? pos_3.toUpperCase() : "JANUARY"; let empYear = pos_4 ? pos_4.toUpperCase() : "2026";
-                    vault.push({ id: crypto.randomUUID().substring(0, 8), employee_name: pos_0.toUpperCase(), salary: empSalary, agency: pos_2.toUpperCase(), month: empMonth, year: empYear });
+                    let empMonth = pos_2 ? pos_2.toUpperCase() : "JANUARY"; let empYear = pos_3 ? pos_3.toUpperCase() : "2026";
+                    vault.push({ id: crypto.randomUUID().substring(0, 8), employee_name: pos_0.toUpperCase(), agency: pos_1.toUpperCase(), month: empMonth, year: empYear });
                 }
             });
             saveVault(vault); alert("STAGING INTERFACE TRACKS SECURED.");
         }
 
-        function deleteRecord(e, id) { e.stopPropagation(); if (currentSystemAccessRole === "LOCAL") return; if (!confirm("DELETE RECORD?")) return; saveVault(memoryVaultCache.filter(item => item.id !== id)); resetForm(); }
-        
-        function clearWholeBoard() { if (currentSystemAccessRole === "LOCAL") return; if (!confirm("WIPE ENTIRE STACKS?")) return; saveVault([]); resetForm(); }
-        
+        function deleteRecord(e, id) { e.stopPropagation(); if (currentSystemAccessRole !== "ADMIN") return; if (!confirm("DELETE RECORD?")) return; saveVault(memoryVaultCache.filter(item => item.id !== id)); resetForm(); }
+        function clearWholeBoard() { if (currentSystemAccessRole !== "ADMIN") return; if (!confirm("WIPE ENTIRE STACKS?")) return; saveVault([]); resetForm(); }
         function clearFilters() { document.getElementById('searchQuery').value = ''; document.getElementById('searchAgencyDropdown').value = ''; document.getElementById('searchMonthDropdown').value = ''; document.getElementById('searchYearDropdown').value = ''; activeQueryText = ""; filterAgencySelected = ""; filterMonthSelected = ""; filterYearSelected = ""; executePreFilterIndexing(); }
         
         function exportToCSV() {
             if (memoryVaultCache.length === 0) return;
-            let csvContent = "data:text/csv;charset=utf-8,NAME,SALARY,AGENCY,MONTH,YEAR\r\n";
-            memoryVaultCache.forEach(row => { csvContent += '"' + row.employee_name + '","' + row.salary + '","' + row.agency + '","' + row.month + '","' + row.year + '"\r\n'; });
+            let csvContent = "data:text/csv;charset=utf-8,NAME,AGENCY,MONTH,YEAR\r\n";
+            memoryVaultCache.forEach(row => { csvContent += '"' + row.employee_name + '","' + row.agency + '","' + row.month + '","' + row.year + '"\r\n'; });
             const link = document.createElement("a"); link.setAttribute("href", encodeURI(csvContent)); link.setAttribute("download", "GOL_ONLINE_EXPORT_REPORT.csv"); document.body.appendChild(link); link.click(); document.body.removeChild(link);
         }
 
